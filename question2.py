@@ -27,3 +27,6 @@ corr = numeric_features.corr()
 top_5_features = corr['revenue'].sort_values(ascending=False)[:5]
 X_train, X_test, y_train, y_test = train_test_split(top_5_features, y, test_size=0.3,random_state=10)
 test_rmse = (np.sqrt(mean_squared_error(top_5_features, y)))
+test_r2 = r2_score(y_test, pred)
+print(test_rmse)
+print(test_r2)
